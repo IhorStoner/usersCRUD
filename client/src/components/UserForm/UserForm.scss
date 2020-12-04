@@ -1,0 +1,13 @@
+.form {
+  &__row {
+    margin-bottom: 10px;
+  }
+
+  & .label {
+    width: 140px;
+  }
+
+  &__input {
+    max-width: 350px;
+  }
+}
