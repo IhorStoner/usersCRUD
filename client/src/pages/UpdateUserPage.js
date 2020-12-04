@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useHistory,useParams } from 'react-router-dom'
 import { Header } from 'semantic-ui-react'
 import { UpdateUserForm }  from '../components/UserForm/UserForm'
+import config from '../config/deafult.json'
 
 export default function AddNewStudentPage() {
   const { userId } = useParams()
@@ -10,7 +11,7 @@ export default function AddNewStudentPage() {
 
   const onSubmit = useCallback(async values => {
     try {
-      await axios.put(`http://localhost:5000/api/users/${userId}`, values)
+      await axios.put(`${config.serverUrl}/api/users/${userId}`, values)
       history.push('/users')
     } catch (e) {
       console.log(e)
